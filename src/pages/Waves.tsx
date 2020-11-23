@@ -7,7 +7,7 @@ const Waves: FC = () => {
   const [currentWave, setCurrentWave] = useState(0);
 
   useEffect(() => {
-    const interval: number = setInterval(() => {
+    const interval: any = setInterval(() => {
       setCurrentWave(currentWave + 1);
     }, 1000);
 
