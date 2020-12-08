@@ -1,22 +1,15 @@
 import React from "react";
-import Image from "next/image";
 
 import Title from "@/components/Title";
 import Navigation from "@/components/Navigation";
+import Face from "@/components/Face";
 
 const Home: React.FC = () => (
   <div className="container">
     <main>
       <Title text="Topi Salonen" />
 
-      <div className="circle">
-        <Image
-          src="/topi_500x500.png"
-          alt="The face of Topi Salonen"
-          width={250}
-          height={250}
-        />
-      </div>
+      <Face />
 
       <Navigation />
     </main>

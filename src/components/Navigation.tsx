@@ -4,7 +4,7 @@ import NavItem, { NavItemType } from "@/components/NavItem";
 const Navigation: FC = () => {
   const navItems: NavItemType[] = [
     { href: "/CV", text: "CV" },
-    { href: "/Waves", text: "Wavy" },
+    // { href: "/Waves", text: "Wavy" },
   ];
 
   return (

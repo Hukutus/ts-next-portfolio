@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import Link from "next/link";
 import Wave from "@/components/Wave";
+import Colors from "@/utils/Colors";
 
 export type NavItemType = {
   image?: string;
@@ -23,7 +24,7 @@ const NavItem: FC<Readonly<NavItemType>> = ({
           onMouseLeave={() => setWaveUpdate(waveUpdate + 1)}
         >
           <Wave
-            color="orangered"
+            color={Colors.main}
             waves={4}
             viewBox={{ width: 100, height: 100 }}
             height="5em"
@@ -40,7 +41,8 @@ const NavItem: FC<Readonly<NavItemType>> = ({
           h1 {
             position: absolute;
             font-size: 1.5em;
-            color: antiquewhite;
+            font-family: Quicksand, sans-serif;
+            color: ${Colors.text};
           }
 
           .nav-item {
@@ -54,13 +56,13 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             margin: 0 1em;
             border-radius: 50%;
             overflow: hidden;
-            background: coral;
+            background: ${Colors.light};
 
             transition: box-shadow 0.2s ease;
-            box-shadow: 0 0 0 0.5em #ff7f507a;
+            box-shadow: 0 0 0 0.2em ${Colors.dark};
 
             &:hover {
-              box-shadow: 0 0 0 0.5em #ff7f507a;
+              box-shadow: 0 0 0 0.4em ${Colors.dark};
             }
           }
         `}

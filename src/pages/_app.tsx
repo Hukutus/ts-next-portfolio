@@ -40,15 +40,6 @@ const App: FC<any> = ({ Component, pageProps }) => (
           -moz-user-select: none;
           user-select: none;
         }
-
-        .circle {
-          width: 250px;
-          height: 250px;
-
-          border-radius: 50%;
-          box-shadow: 0 0 0 0.5em $dark-gray;
-          overflow: hidden;
-        }
       `}
     </style>
   </>

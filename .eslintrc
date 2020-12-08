@@ -14,7 +14,7 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier/react"],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier", "prettier/react"],
   "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
   "rules": {
     "prettier/prettier": "error",
