@@ -10,9 +10,24 @@ const Title: FC<Readonly<{ text: string }>> = ({
       {`
         .title {
           letter-spacing: 0.5em;
+          padding-left: 0.5em;
+
           line-height: 1.15;
           font-size: 4rem;
           font-family: Quicksand, sans-serif;
+        }
+
+        @media only screen and (max-width: 820px) {
+          .title {
+            text-align: center;
+          }
+        }
+
+        @media only screen and (max-width: 500px) {
+          .title {
+            letter-spacing: unset;
+            padding-left: 0;
+          }
         }
       `}
     </style>
