@@ -9,16 +9,13 @@ const PdfDynamic = dynamic(() => import("../components/PdfViewer"), {
 
 const CV: FC = () => (
   <>
-    <Link href="/" passHref>
-      <BackButton to="Home" />
-    </Link>
-
     <article className="pdf-container">
       <PdfDynamic url="/cv.pdf" width={1000} pageNumber={1} />
     </article>
 
     <style jsx>{`
       .pdf-container {
+        margin-top: 1em;
         display: flex;
         justify-content: center;
         width: 100%;

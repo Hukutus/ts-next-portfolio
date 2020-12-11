@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Meta from "@/components/Head";
+import Layout from "@/components/Layout";
 
 const App: FC<any> = ({ Component, pageProps }) => (
   <>
@@ -14,7 +15,9 @@ const App: FC<any> = ({ Component, pageProps }) => (
       scripts={[]}
     />
 
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
 
     <style jsx global>
       {`

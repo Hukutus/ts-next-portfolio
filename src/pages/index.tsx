@@ -3,6 +3,7 @@ import React from "react";
 import Title from "@/components/Title";
 import Navigation from "@/components/Navigation";
 import Face from "@/components/Face";
+import Wave from "@/components/Wave";
 
 const Home: React.FC = () => (
   <div className="container">
@@ -11,13 +12,33 @@ const Home: React.FC = () => (
 
       <Face />
 
-      <Navigation />
+      {/* <div className="wave-box">
+      <Wave
+        viewBox={{ width: 1000, height: 500 }}
+        height="100%"
+        width="100%"
+        waves={5}
+        fixedPoints={{
+          2: 250,
+          3: 250,
+        }}
+      />
+      </div> */}
     </main>
 
     <style jsx>
       {`
+        .wave-box {
+          width: 100vw;
+
+          position: absolute;
+          bottom: 0;
+          z-index: -1;
+
+          display: flex;
+        }
+
         .container {
-          min-height: 100vh;
           padding: 0 0.5rem;
           display: flex;
           flex-direction: column;

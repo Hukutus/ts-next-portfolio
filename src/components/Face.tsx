@@ -29,7 +29,7 @@ const Face: FC<FaceType> = (props: FaceType) => {
             height: ${size ?? "250px"};
 
             border-radius: 50%;
-            box-shadow: 0 0 0 0.4em ${Colors.dark};
+            box-shadow: 0 0 0 0.5em ${Colors.text};
             overflow: hidden;
           }
 
@@ -37,10 +37,10 @@ const Face: FC<FaceType> = (props: FaceType) => {
             cursor: pointer;
             transition: box-shadow 0.2s ease;
             margin: 0.75em;
-            box-shadow: 0 0 0 0.2em ${Colors.dark};
+            box-shadow: 0 0 0 0.2em ${Colors.text};
 
             &:hover {
-              box-shadow: 0 0 0 0.4em ${Colors.dark};
+              box-shadow: 0 0 0 0.4em ${Colors.text};
             }
           }
         `}

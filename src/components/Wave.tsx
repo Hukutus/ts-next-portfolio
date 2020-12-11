@@ -21,6 +21,7 @@ export type WaveProps = {
   height?: number | string;
   width?: number | string;
   viewBox?: ViewBox;
+  fixedPoints?: { [key: number]: number };
 
   update?: number;
 };
@@ -63,6 +64,25 @@ const bezierCommand = (
   return `C ${start.x},${start.y} ${end.x},${end.y} ${point.x},${point.y}`;
 };
 
+const randomY = (viewBox: ViewBox): number =>
+  viewBox.height / 3 +
+  Math.floor(Math.random() * Math.floor(viewBox.height - viewBox.height / 3));
+
+const generatePoints = (
+  viewBox: ViewBox,
+  amount: number,
+  fixedPoints?: { [key: number]: number },
+): PointType[] =>
+  Array(amount + 1)
+    .fill(0)
+    .map((_, i) => ({
+      x: (viewBox.width / amount) * i,
+      y:
+        fixedPoints && fixedPoints[i] !== undefined
+          ? fixedPoints[i]
+          : randomY(viewBox),
+    }));
+
 const Wave: FC<WaveProps> = (props: WaveProps) => {
   const [pathD, setPathD] = useState("");
   const [viewBox, setViewBox] = useState(null);
@@ -71,21 +91,13 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
     setViewBox(props.viewBox ?? { width: 1000, height: 200 });
   }, [props.viewBox]);
 
-  const generatePoints = (amount: number): PointType[] =>
-    Array(amount + 1)
-      .fill(0)
-      .map((_, i) => ({
-        x: (viewBox.width / amount) * i,
-        y:
-          viewBox.height / 3 +
-          Math.floor(
-            Math.random() * Math.floor(viewBox.height - viewBox.height / 3),
-          ),
-      }));
-
   const svgPathD = (): string => {
     // Get points
-    const points: PointType[] = generatePoints(props.waves ?? 4);
+    const points: PointType[] = generatePoints(
+      viewBox,
+      props.waves ?? 4,
+      props.fixedPoints,
+    );
 
     // Start at bottom left
     const pathStart = `M0,${viewBox.height},0,${points[0].y}`;
