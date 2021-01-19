@@ -8,7 +8,7 @@ const Layout: FC<{ children: any }> = ({ children }) => (
       <div className="bg-wrap">
         <Image
           alt="Succulent"
-          src="/pexels-scott-webb-305821_tiny.jpg"
+          src="/pexels-scott-webb-305821.jpg"
           quality={100}
           layout="fill"
           objectFit="cover"
