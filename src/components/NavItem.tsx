@@ -2,7 +2,6 @@ import React, { FC, useState } from "react";
 import Link from "next/link";
 import Wave from "@/components/Wave";
 import Colors from "@/utils/Colors";
-import Face from "@/components/Face";
 
 export type NavItemType = {
   image?: string;
@@ -59,16 +58,22 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             cursor: pointer;
             height: ${size ?? "5em"};
             width: ${size ?? "5em"};
-            margin: 0 1em;
+            margin-left: 1em;
             border-radius: 50%;
             overflow: hidden;
             background: ${Colors.light};
 
             transition: box-shadow 0.2s ease;
-            box-shadow: 0 0 0 0.2em ${Colors.text};
+            box-shadow: 0 0 0.2em ${Colors.shadow};
 
             &:hover {
-              box-shadow: 0 0 0 0.4em ${Colors.text};
+              box-shadow: 0 0 0.4em ${Colors.shadow};
+            }
+          }
+
+          @media only screen and (max-width: 500px) {
+            .nav-item {
+              margin: 0;
             }
           }
         `}

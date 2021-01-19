@@ -6,6 +6,7 @@ const NavigationBar: FC = () => {
   const navItems: NavItemType[] = [
     { href: "/", text: "Home" },
     { href: "/CV", text: "CV" },
+    { href: "/Portfolio", text: "Portfolio" },
     // { href: "/Waves", text: "Wavy" },
   ];
 
@@ -20,12 +21,23 @@ const NavigationBar: FC = () => {
       <style jsx>
         {`
           .nav-container {
+            position: sticky;
+            top: 0;
+
             display: flex;
             align-items: center;
 
-            height: 5.5em;
-            background: ${Colors.dark};
-            box-shadow: 0 0.2em 0 ${Colors.text};
+            padding-top: 1em;
+
+            //height: 5.5em;
+            //background: ${Colors.dark};
+            //box-shadow: 0 0.2em 0.5em ${Colors.shadow};
+          }
+
+          @media only screen and (max-width: 500px) {
+            .nav-container {
+              justify-content: space-around;
+            }
           }
         `}
       </style>

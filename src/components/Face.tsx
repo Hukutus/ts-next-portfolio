@@ -16,20 +16,20 @@ const Face: FC<FaceType> = (props: FaceType) => {
         <Image
           src="/topi_500x500.png"
           alt="The face of Topi Salonen"
-          layout="responsive"
-          width={250}
-          height={250}
+          layout="fill"
         />
       </div>
 
       <style jsx>
         {`
           .circle {
+            position: relative;
+
             width: ${size ?? "250px"};
             height: ${size ?? "250px"};
 
             border-radius: 50%;
-            box-shadow: 0 0 0 0.5em ${Colors.text};
+            box-shadow: 0 0 0.5em ${Colors.shadow};
             overflow: hidden;
           }
 

@@ -1,16 +1,34 @@
 import React from "react";
 
-import Title from "@/components/Title";
-import Navigation from "@/components/Navigation";
+// import Title from "@/components/Title";
 import Face from "@/components/Face";
-import Wave from "@/components/Wave";
+import Colors from "@/utils/Colors";
 
 const Home: React.FC = () => (
   <div className="container">
     <main>
-      <Title text="Topi Salonen" />
+      {/* <Title text="Topi Salonen"/> */}
 
       <Face />
+
+      <div className="info-container">
+        {/* <div className={"info-below-image"}></div> */}
+
+        <div className="text-container">
+          Welcome!
+          <br />
+          <br />
+          I&apos;m Topi, a web developer from Turku, Finland.
+          <br />
+          <br />
+          Currently I&apos;m employed by NordicEdu, creating educational games
+          and motivating users with gamification.
+          <br />
+          <br />I also have my Master&apos;s Thesis on the way, hopefully
+          completing my degree during Q2 2021. It&apos;s about gamifying
+          tutorials in b2b applications.
+        </div>
+      </div>
 
       {/* <div className="wave-box">
       <Wave
@@ -28,6 +46,42 @@ const Home: React.FC = () => (
 
     <style jsx>
       {`
+        .bg-wrap {
+          position: fixed;
+          height: 100vh;
+          width: 100vw;
+          overflow: hidden;
+          z-index: -1;
+        }
+
+        .info-container {
+          display: flex;
+          flex-direction: column;
+          padding: 1em;
+          border-radius: 0.2em;
+          //margin-top: -123px;
+          margin-top: 2em;
+
+          min-height: 15em;
+          width: 25em;
+          max-width: 90vw;
+
+          font-family: Quicksand, sans-serif;
+          font-size: 1em;
+
+          background: rgba(255, 255, 255, 0.8);
+          box-shadow: 0 0.2em 0.4em ${Colors.shadow};
+        }
+
+        .info-below-image {
+          height: 123px;
+          //background: lightblue;
+        }
+
+        .text-container {
+          display: block;
+        }
+
         .wave-box {
           width: 100vw;
 
@@ -39,6 +93,7 @@ const Home: React.FC = () => (
         }
 
         .container {
+          flex: 1;
           padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
@@ -46,14 +101,26 @@ const Home: React.FC = () => (
           align-items: center;
         }
 
+        @media only screen and (max-width: 500px) {
+          .container {
+            margin-bottom: 5em;
+          }
+        }
+
         main {
-          padding: 5rem 0;
+          //padding: 5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
         }
+
+        /*@media only screen and (max-width: 500px) {
+          main {
+            padding: 0;
+          }
+        }*/
 
         footer {
           width: 100%;

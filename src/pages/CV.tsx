@@ -1,7 +1,5 @@
 import React, { FC } from "react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
-import BackButton from "@/components/BackButton";
 
 const PdfDynamic = dynamic(() => import("../components/PdfViewer"), {
   ssr: false,
@@ -15,9 +13,10 @@ const CV: FC = () => (
 
     <style jsx>{`
       .pdf-container {
-        margin-top: 1em;
+        margin: 1em 0 5em;
         display: flex;
         justify-content: center;
+
         width: 100%;
       }
     `}</style>
