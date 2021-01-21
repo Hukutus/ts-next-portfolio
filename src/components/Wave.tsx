@@ -114,7 +114,7 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
       viewBox.width
     },${viewBox.height} 0,${viewBox.height}`;
 
-    //
+    // Combine start, generated bezier and end
     return pathStart + d + pathEnd;
   };
 

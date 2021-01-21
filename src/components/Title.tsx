@@ -13,7 +13,7 @@ const Title: FC<Readonly<{ text: string }>> = ({
           padding-left: 0.5em;
 
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 4em;
           font-family: Quicksand, sans-serif;
         }
 

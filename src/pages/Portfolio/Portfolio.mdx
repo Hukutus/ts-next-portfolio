@@ -1,0 +1,34 @@
+import PortfolioLayout, {HeaderImage, StyledLink} from "../../_layouts/PortfolioLayout";
+
+export const metadata = {
+  src: "/portfolio_image.png",
+  alt: "Portfolio header image",
+  text: "Portfolio (it's this page!)",
+  order: 2
+};
+
+<HeaderImage
+  {...metadata}
+/>
+
+<StyledLink
+  url={"https://github.com/Hukutus/ts-next-portfolio/"}
+  text={"Source code"}
+/>
+
+**Motivation**
+
+Everyone needs a portfolio, and it allows you to spend a lot of time trying out random stuff.
+I'd say this is around the 4th version I've made, but also the only one that actually has some proper content.
+
+**Technical stuff**
+
+I wanted the page to be light and fast, so I went with **Next.js**.
+It comes with image optimization, easy SEO, and it's pretty much **React**, which made it feel like an obvious choice.
+All the portfolio pages are made using **MDX**, which allows me to easily add more content with identical styling.
+
+**TODO or not TODO**
+
+I need to keep doing interesting stuff to show off here. There's also too much Bill Murray going on.
+
+export default PortfolioLayout;

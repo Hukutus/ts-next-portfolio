@@ -1,0 +1,42 @@
+import PortfolioLayout, {HeaderImage} from "../../_layouts/PortfolioLayout";
+
+export const metadata = {
+  src: "http://www.fillmurray.com/800/300",
+  alt: "Placeholder",
+  text: "Board Game \"Tinder\"",
+  order: 3
+};
+
+<HeaderImage
+  {...metadata}
+/>
+
+**Motivation**
+
+This is another hobby project about board gaming (the other being [Wingspan soundboard](/Portfolio/Wingspan)).
+When scheduling game nights the same question keeps popping up almost every time: *What should we play?*.
+In the end everyone brings a ton of games, but we play only few of them.
+
+To make this easier I came up with an idea *Tinder-ish thing for board games*.
+We could combine all the games from the participants' collections, sort them by the best player count, and let people vote on their favorites.
+
+**Technical stuff**
+
+**React + TypeScript** is my usual go-to for my hobby projects, but this time I used **React Native** and functional programming.
+I got my first real taste of FP at work when we started a new **React Native** project at work, and after being very confused for a while I started enjoying it.
+There's isn't any real reason why this was made using Native. I just felt like making it an app that can be also used with **react-native-web**.
+
+Most of our gaming group uses **BoardGameGeek** (BGG) to keep their game collection, and BGG happens to have a public API. The annoying part: it's an XML API.
+Instead of straight up using the response I need to convert the XML to an object with **xml-2-json** and then clean up the thing that says *items[0].item.$.value*.
+With the data the app can display all the games in all our collections inside a **FlatList**.
+
+You can make a game night in the app by selecting a date and the players.
+If someone doesn't have a BGG user, you can just add an empty player to get the correct amount of players.
+
+**TODO or not TODO**
+
+The whole Tinder part is still a work in progress. You can view games but you can't vote yet.
+I'm also unsure how I'd go with the whole authentication thing, so that the players who are attending the
+game night can come join the vote.
+
+export default PortfolioLayout;

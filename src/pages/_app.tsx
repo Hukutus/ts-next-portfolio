@@ -1,12 +1,18 @@
 import React, { FC } from "react";
 import Meta from "@/components/Head";
-import Layout from "@/components/Layout";
+import Layout from "@/layouts/Layout";
+import { MDXProvider } from "@mdx-js/react";
+import Link from "next/link";
+
+const components = {
+  a: Link,
+};
 
 const App: FC<any> = ({ Component, pageProps }) => (
   <>
     <Meta
       title="Topi Salonen"
-      description="Portfolio for Topi Salonen - Web developer @ NordicEdu"
+      description="I develop stuff for the web. Come check out some stuff I've made, like this page. Oh, and I like gamification!"
       canonical="topisalonen.fi"
       image="/topi_500x500.png"
       styleSheets={[
@@ -16,7 +22,9 @@ const App: FC<any> = ({ Component, pageProps }) => (
     />
 
     <Layout>
-      <Component {...pageProps} />
+      <MDXProvider components={components}>
+        <Component {...pageProps} />
+      </MDXProvider>
     </Layout>
 
     <style jsx global>

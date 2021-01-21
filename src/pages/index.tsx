@@ -1,47 +1,18 @@
 import React from "react";
-
-// import Title from "@/components/Title";
 import Face from "@/components/Face";
+import Description from "@/components/Description.mdx";
 import Colors from "@/utils/Colors";
 
 const Home: React.FC = () => (
   <div className="container">
     <main>
-      {/* <Title text="Topi Salonen"/> */}
-
       <Face />
 
       <div className="info-container">
-        {/* <div className={"info-below-image"}></div> */}
-
         <div className="text-container">
-          Welcome!
-          <br />
-          <br />
-          I&apos;m Topi, a web developer from Turku, Finland.
-          <br />
-          <br />
-          Currently I&apos;m employed by NordicEdu, creating educational games
-          and motivating users with gamification.
-          <br />
-          <br />I also have my Master&apos;s Thesis on the way, hopefully
-          completing my degree during Q2 2021. It&apos;s about gamifying
-          tutorials in b2b applications.
+          <Description />
         </div>
       </div>
-
-      {/* <div className="wave-box">
-      <Wave
-        viewBox={{ width: 1000, height: 500 }}
-        height="100%"
-        width="100%"
-        waves={5}
-        fixedPoints={{
-          2: 250,
-          3: 250,
-        }}
-      />
-      </div> */}
     </main>
 
     <style jsx>
@@ -59,7 +30,6 @@ const Home: React.FC = () => (
           flex-direction: column;
           padding: 1em;
           border-radius: 0.2em;
-          //margin-top: -123px;
           margin-top: 2em;
 
           min-height: 15em;
@@ -75,7 +45,6 @@ const Home: React.FC = () => (
 
         .info-below-image {
           height: 123px;
-          //background: lightblue;
         }
 
         .text-container {
@@ -94,7 +63,7 @@ const Home: React.FC = () => (
 
         .container {
           flex: 1;
-          padding: 0 0.5rem;
+          padding: 0 0.5em;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -108,19 +77,12 @@ const Home: React.FC = () => (
         }
 
         main {
-          //padding: 5rem 0;
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
         }
-
-        /*@media only screen and (max-width: 500px) {
-          main {
-            padding: 0;
-          }
-        }*/
 
         footer {
           width: 100%;
@@ -132,7 +94,7 @@ const Home: React.FC = () => (
         }
 
         footer img {
-          margin-left: 0.5rem;
+          margin-left: 0.5em;
         }
 
         footer a {
@@ -153,14 +115,14 @@ const Home: React.FC = () => (
 
         .description {
           line-height: 1.5;
-          font-size: 1.5rem;
+          font-size: 1.5em;
         }
 
         code {
           background: #fafafa;
           border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
+          padding: 0.75em;
+          font-size: 1.1em;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
@@ -172,13 +134,13 @@ const Home: React.FC = () => (
           flex-wrap: wrap;
 
           max-width: 800px;
-          margin-top: 3rem;
+          margin-top: 3em;
         }
 
         .card {
-          margin: 1rem;
+          margin: 1em;
           flex-basis: 45%;
-          padding: 1.5rem;
+          padding: 1.5em;
           text-align: left;
           color: inherit;
           text-decoration: none;
@@ -195,13 +157,13 @@ const Home: React.FC = () => (
         }
 
         .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
+          margin: 0 0 1em 0;
+          font-size: 1.5em;
         }
 
         .card p {
           margin: 0;
-          font-size: 1.25rem;
+          font-size: 1.25em;
           line-height: 1.5;
         }
 

@@ -1,0 +1,44 @@
+import PortfolioLayout, {HeaderImage, StyledLink} from "../../_layouts/PortfolioLayout";
+
+export const metadata = {
+  src: "/wignspan_soundboard.png",
+  alt: "Wingspan Soundboard header image",
+  text: "Wingspan Soundboard",
+  order: 999,
+};
+
+<HeaderImage
+  {...metadata}
+/>
+
+<StyledLink
+  url={"https://wingpan-audio.web.app/"}
+  text={"Try it out!"}
+/>
+
+**Motivation**
+
+I'm really into modern board games, and my collection keeps growing year after year.
+Wingspan is a board game from 2019 where the aim is to play birds that do stuff birds do, like laying eggs or eating other birds (for points!).
+
+The cool thing about Wingspan is that each bird is unique. So if you play a Black-Bellied Whistling-Duck, you can be sure no one else will have one.
+I have no idea what most birds sound like, so I wanted to try creating a soundboard that has all the different birds you can find in Wingspan.
+
+**Technical stuff**
+
+This soundboard was made with **React** and **TypeScript** since I hadn't used React before and mainly used Angular in my work. No functional programming here though. I also used **Firebase** to hold all the bird data, and to not do an excessive amount of API calls to the public bird API.
+
+User **TawnyFrogmouth** on **BoardGameGeek** (the biggest board gaming website) shared a sheet with data of all the Wingspan birds, which made starting out really easy.
+For the sounds, I found a bird enthusiast site called **Xeno Canto** that has a ton of user-submitted recordings of bird songs and a public API.
+
+In short, the soundboard works like any other soundboard: by pressing a button to play a sound. If a bird's song is already stored in **Firestore** the app will play one of the previously stored songs. If not, the app queries **Xeno Canto** instead, play it, and stores the song into **Firestore**.
+
+**TODO or not TODO**
+
+The UI is hideous. I was going to build a properly styled front-end, but lost motivation.
+So I'd like to still add a stylized UI with pictures.
+The game also has two expansions with more coming, so there are more birds to add (I hope there's an updated sheet).
+
+It seems like I never added proper source control, so there's no source code for now.
+
+export default PortfolioLayout;

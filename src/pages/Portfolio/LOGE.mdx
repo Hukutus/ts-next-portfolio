@@ -1,0 +1,51 @@
+import PortfolioLayout, {HeaderImage, StyledLink} from "../../_layouts/PortfolioLayout";
+
+export const metadata = {
+  src: "/loge.png",
+  alt: "LOGE image",
+  text: "LOGE",
+  order: 0,
+};
+
+<HeaderImage
+  {...metadata}
+/>
+
+<StyledLink
+  url={"https://nordicedu.com/portfolio/loge?lang=en"}
+  text={"Read more from the NordicEdu portfolio"}
+/>
+
+**Description**
+
+LOGE is the main project I worked on at **NordicEdu**, created with and for **TalentVectia**.
+
+LOGE is a lightly gamified platform where organizations can arrange discussions on strategy, values, or basically anything else.
+One of the cool things about LOGE is that when you attend a discussion you won't know who you're participating with beforehand,
+so if you're working in a big organization you'll likely be discussing with co-workers you have never worked with before.
+
+When I started as an intern at NordicEdu in 2017 the first version LOGE had just been released.
+It still does the same core functions, but the UI and UX sides have been updated several times
+and there's a ton of new features that have been added during the few years I've worked on the project.
+I'd say around 80% of the current code base is written by me (even the spaghetti).
+
+**Technical stuff**
+
+LOGE uses the **MEAN-stack (Mongo, Express, Angular, Node)** with the latest version of Angular.
+
+For the real-time discussions we use sockets. We started out with plain **WebSockets**, but later
+"upgraded" them to **Socket.io** as we wanted to have a proper room system and more reliable handling of reconnection.
+These could have both been done with WebSockets, but with Socket.io we didn't have to do it ourselves.
+
+In LOGE 1.0 you had to use an external conferencing software like **Teams**,
+but the aim was to have our own **WebRTC** conferencing. We have encountered and solved a ton of problems caused by
+our limited knowledge of WebRTC during the past couple of years.
+Many problems were also caused by firewalls and by microphones not being connected or being muted.
+The first version of the voice chat was purely P2P, but nowadays the voice track is sent to a dedicated RTC server that forwards the speech to other participants.
+This is done with the **mediasoup** SFU. We also have a **TURN** server on the side to get around those pesky corporate firewalls.
+
+**TODO or not TODO**
+
+I'm not going to list our plans here, sorry!
+
+export default PortfolioLayout;

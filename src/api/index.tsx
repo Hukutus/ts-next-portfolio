@@ -1,0 +1,31 @@
+export type PostInfo = {
+  src: string;
+  alt: string;
+  text: string;
+  order: number;
+  path: string;
+};
+
+const getMetadata = async (key: string): Promise<PostInfo | null> => {
+  const slug: string = key.slice(2).replace(".mdx", "");
+  const module: any = await import(`@/pages/Portfolio/${slug}.mdx`);
+
+  // Check for missing metadata or hidden route
+  if (module.metadata && slug.indexOf("_") !== 0) {
+    return Object.assign(module.metadata, { path: `/Portfolio/${slug}` });
+  }
+
+  return null;
+};
+
+const getPosts = async (): Promise<PostInfo[]> => {
+  const context = require.context("@/pages/Portfolio", false, /\.mdx$/);
+  const keys: string[] = context.keys();
+
+  // Wait for imports
+  return Promise.all(keys.map((key) => getMetadata(key))).then((results) =>
+    results.filter((result) => !!result).sort((a, b) => a.order - b.order),
+  );
+};
+
+export { getPosts };

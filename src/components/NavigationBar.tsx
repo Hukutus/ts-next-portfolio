@@ -28,6 +28,7 @@ const NavigationBar: FC = () => {
             align-items: center;
 
             padding-top: 1em;
+            z-index: 1;
 
             //height: 5.5em;
             //background: ${Colors.dark};
