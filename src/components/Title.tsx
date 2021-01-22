@@ -23,7 +23,7 @@ const Title: FC<Readonly<{ text: string }>> = ({
           }
         }
 
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 820px) {
           .title {
             letter-spacing: unset;
             padding-left: 0;

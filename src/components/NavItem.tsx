@@ -71,7 +71,7 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             }
           }
 
-          @media only screen and (max-width: 500px) {
+          @media only screen and (max-width: 820px) {
             .nav-item {
               margin: 0;
             }

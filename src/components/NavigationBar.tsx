@@ -27,7 +27,7 @@ const NavigationBar: FC = () => {
             display: flex;
             align-items: center;
 
-            padding-top: 1em;
+            padding: 1em 0;
             z-index: 1;
 
             //height: 5.5em;
@@ -35,7 +35,7 @@ const NavigationBar: FC = () => {
             //box-shadow: 0 0.2em 0.5em ${Colors.shadow};
           }
 
-          @media only screen and (max-width: 500px) {
+          @media only screen and (max-width: 820px) {
             .nav-container {
               justify-content: space-around;
             }

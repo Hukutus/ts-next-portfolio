@@ -70,12 +70,6 @@ const Home: React.FC = () => (
           align-items: center;
         }
 
-        @media only screen and (max-width: 500px) {
-          .container {
-            margin-bottom: 5em;
-          }
-        }
-
         main {
           flex: 1;
           display: flex;

@@ -51,6 +51,12 @@ const Portfolio: FC = () => {
         h1 {
           margin-top: 0;
         }
+
+        @media only screen and (max-width: 820px) {
+          .portfolio-container {
+            margin-bottom: 1em;
+          }
+        }
       `}</style>
     </>
   );

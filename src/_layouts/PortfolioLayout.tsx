@@ -109,7 +109,7 @@ export const PortfolioCard: FC<{
             alt={alt}
             text={text}
             styles={{
-              height: "10em",
+              height: "100%",
               width: "100%",
             }}
           />
@@ -126,6 +126,12 @@ export const PortfolioCard: FC<{
 
           &:hover {
             opacity: 0.9;
+          }
+        }
+        @media only screen and (max-width: 820px) {
+          a {
+            width: 100%;
+            height: 7em;
           }
         }
       `}</style>
@@ -146,6 +152,10 @@ export const StyledLink: FC<{ url: string; text: string }> = ({
     <style jsx>{`
       div {
         margin-top: 0.5em;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
       span {
         margin-left: 0.5em;
