@@ -13,6 +13,10 @@ const Tag: FC<Readonly<{ text: string }>> = ({ text }) => (
           font-size: 0.7em;
           border-radius: 0.5em;
           padding: 0.2em 0.5em;
+
+          &:not(:first-child) {
+            margin-left: 0.5em;
+          }
         }
       `}
     </style>

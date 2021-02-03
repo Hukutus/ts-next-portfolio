@@ -1,5 +1,6 @@
 import PortfolioLayout, { StyledLink } from "@/layouts/PortfolioLayout";
 import Wave from "@/components/Wave";
+import Tags from "../../components/Tag";
 
 export const metadata = {
   src: "/waves.png",
@@ -45,6 +46,10 @@ export const metadata = {
     }
   `}</style>
 </>
+
+<Tags
+  tags={["React FC", "TypeScript", "SVG", "Bezier Command"]}
+/>
 
 <StyledLink
   url={"https://github.com/Hukutus/ts-next-portfolio/blob/main/src/components/Wave.tsx"}

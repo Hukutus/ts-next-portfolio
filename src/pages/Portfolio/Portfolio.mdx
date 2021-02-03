@@ -1,4 +1,5 @@
 import PortfolioLayout, {HeaderImage, StyledLink} from "@/layouts/PortfolioLayout";
+import Tags from "../../components/Tag";
 
 export const metadata = {
   src: "/portfolio_image.png",
@@ -10,6 +11,10 @@ export const metadata = {
 
 <HeaderImage
   {...metadata}
+/>
+
+<Tags
+  tags={["NextJS", "React", "TypeScript", "MDX"]}
 />
 
 <StyledLink

@@ -1,4 +1,5 @@
 import PortfolioLayout, {HeaderImage, StyledLink} from "@/layouts/PortfolioLayout";
+import Tags from "../../components/Tag";
 
 export const metadata = {
   src: "/doodler.png",
@@ -12,6 +13,10 @@ export const metadata = {
   {...metadata}
 />
 
+<Tags
+  tags={["React", "TypeScript", "Canvas"]}
+/>
+
 <StyledLink
   url={"https://github.com/Hukutus/doodling"}
   text={"Check out the source"}
@@ -22,16 +27,16 @@ export const metadata = {
 While working for NordicEdu we often played games during coffee breaks. One of those games go by the name **Scribbl.io**.
 
 When I was younger I enjoyed a game called *Kuva-arvoitus* from a Finnish Java game site called **Aapeli** (they shut down a couple of years ago, likely because of the whole Java thing).
-I played that game a lot.
+I spent hours playing that game.
 
-So, why not try to make a drawing app myself? Can't be that hard.
+So, why not try to make a drawing app myself?
 
 **Technical stuff**
 
-This is another OOP **React** project with no planned back-end (yet).
+This is another **React** project with no planned back-end (yet).
 I basically wanted to have the option to draw on the screen using the mouse with different colors and brushes.
 
-The end result is quite simple, since it's a **canvas** element that listens to mouse move during mouse-down, and draws lines between points.
+The end result is quite simple, since it's basically just a **HTML canvas** element that listens to mouse move during mouse-down, and draws lines between points.
 
 **TODO or not TODO**
 
