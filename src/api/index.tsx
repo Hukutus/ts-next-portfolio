@@ -1,6 +1,7 @@
 export type PostInfo = {
   src: string;
   alt: string;
+  type: "professional" | "personal";
   text: string;
   order: number;
   path: string;

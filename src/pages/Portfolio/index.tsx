@@ -17,10 +17,24 @@ const Portfolio: FC = () => {
       <div className="portfolio-container">
         <h1>My works</h1>
 
+        <h2>Professional</h2>
+
         <div className="portfolio-flex">
-          {posts?.map((postInfo) => (
-            <PortfolioCard key={postInfo.text} {...postInfo} />
-          ))}
+          {posts
+            ?.filter((post) => post.type === "professional")
+            .map((postInfo) => (
+              <PortfolioCard key={postInfo.text} {...postInfo} />
+            ))}
+        </div>
+
+        <h2>Personal</h2>
+
+        <div className="portfolio-flex">
+          {posts
+            ?.filter((post) => post.type === "personal")
+            .map((postInfo) => (
+              <PortfolioCard key={postInfo.text} {...postInfo} />
+            ))}
         </div>
       </div>
 

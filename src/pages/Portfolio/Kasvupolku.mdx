@@ -1,14 +1,20 @@
-import PortfolioLayout, {HeaderImage, StyledLink} from "../../_layouts/PortfolioLayout";
+import PortfolioLayout, {HeaderImage} from "@/layouts/PortfolioLayout";
+import Tags from "../../components/Tag";
 
 export const metadata = {
-  src: "http://www.fillmurray.com/800/302",
-  alt: "Placeholder",
+  src: "/kasvupolku_proto.png",
+  alt: "Kasvupolku intro",
+  type: "professional",
   text: "Kasvupolku",
   order: 1,
 };
 
 <HeaderImage
   {...metadata}
+/>
+
+<Tags
+  tags={["Test"]}
 />
 
 **Description**

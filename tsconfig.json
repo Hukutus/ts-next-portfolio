@@ -17,11 +17,11 @@
     "paths": {
       "@/includes/*": ["_includes/*"],
       "@/layouts/*": ["_layouts/*"],
-      "@/posts/*": ["_posts/*"],
+      "@/markdown/*": ["_markdown/*"],
       "@/api": ["api/index"],
       "@/*": ["./*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx"]
 }

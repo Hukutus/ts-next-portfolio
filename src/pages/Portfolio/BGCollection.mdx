@@ -1,14 +1,20 @@
-import PortfolioLayout, {HeaderImage} from "../../_layouts/PortfolioLayout";
+import PortfolioLayout, {HeaderImage, StyledLink} from "@/layouts/PortfolioLayout";
 
 export const metadata = {
-  src: "http://www.fillmurray.com/800/300",
-  alt: "Placeholder",
+  src: "/bg_collection.png",
+  alt: "Board Game Collection image",
+  type: "personal",
   text: "Board Game \"Tinder\"",
   order: 3
 };
 
 <HeaderImage
   {...metadata}
+/>
+
+<StyledLink
+  url={"https://github.com/Hukutus/bg-collection"}
+  text={"GitHub repo here"}
 />
 
 **Motivation**
@@ -22,21 +28,22 @@ We could combine all the games from the participants' collections, sort them by 
 
 **Technical stuff**
 
-**React + TypeScript** is my usual go-to for my hobby projects, but this time I used **React Native** and functional programming.
+**React + TypeScript** is my usual go-to for my hobby projects, but this time I used **React Native** (with TypeScript) and functional programming.
 I got my first real taste of FP at work when we started a new **React Native** project at work, and after being very confused for a while I started enjoying it.
-There's isn't any real reason why this was made using Native. I just felt like making it an app that can be also used with **react-native-web**.
+There's isn't any other reason why I used React Native other than to challenge myself. I intend to keep the app usable in a browser with **react-native-web**.
 
 Most of our gaming group uses **BoardGameGeek** (BGG) to keep their game collection, and BGG happens to have a public API. The annoying part: it's an XML API.
-Instead of straight up using the response I need to convert the XML to an object with **xml-2-json** and then clean up the thing that says *items[0].item.$.value*.
-With the data the app can display all the games in all our collections inside a **FlatList**.
+Instead of straight up using a clean response I need to convert the XML to an object with **xml-2-json** and then clean up the thing that says *items[0].item.$.value*.
+With the data the app can display all the games in all our collections inside a lazy-loaded FlatList.
 
 You can make a game night in the app by selecting a date and the players.
 If someone doesn't have a BGG user, you can just add an empty player to get the correct amount of players.
 
 **TODO or not TODO**
 
-The whole Tinder part is still a work in progress. You can view games but you can't vote yet.
+The whole Tinder part is still a work in progress. You can view games, but you can't vote yet.
 I'm also unsure how I'd go with the whole authentication thing, so that the players who are attending the
 game night can come join the vote.
+I haven't really worked with the UI design yet, so the app is very ugly.
 
 export default PortfolioLayout;

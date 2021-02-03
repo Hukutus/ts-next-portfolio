@@ -1,6 +1,6 @@
 import React from "react";
 import Face from "@/components/Face";
-import Description from "@/components/Description.mdx";
+import Description from "@/markdown/Description.mdx";
 import Colors from "@/utils/Colors";
 
 const Home: React.FC = () => (
