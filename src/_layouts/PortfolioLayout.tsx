@@ -85,6 +85,7 @@ export const HeaderImage: FC<{
         justify-content: start;
         align-items: flex-end;
         background: rgba(0, 0, 0, 0.4);
+        pointer-events: none;
       }
     `}</style>
   </>

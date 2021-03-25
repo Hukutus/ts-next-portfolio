@@ -4,16 +4,6 @@ import BackButton from "@/components/BackButton";
 import Wave from "@/components/Wave";
 
 const Waves: FC = () => {
-  const [currentWave, setCurrentWave] = useState(0);
-
-  useEffect(() => {
-    const interval: any = setInterval(() => {
-      setCurrentWave(currentWave + 1);
-    }, 1000);
-
-    return clearInterval(interval);
-  });
-
   return (
     <>
       <div className="wave-container">
@@ -22,19 +12,10 @@ const Waves: FC = () => {
             viewBox={{ width: 1000, height: 300 }}
             height="100%"
             width="100%"
-            update={currentWave}
             waves={6}
           />
         </div>
       </div>
-
-      <button
-        onClick={() => setCurrentWave(currentWave + 1)}
-        type="button"
-        className="refresh-button"
-      >
-        Generate new waves
-      </button>
 
       <div className="link-container">
         <Link href="/" passHref>

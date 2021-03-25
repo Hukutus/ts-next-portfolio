@@ -17,16 +17,12 @@ const NavItem: FC<Readonly<NavItemType>> = ({
   size,
   fontSize,
 }: Readonly<NavItemType>) => {
-  const [waveUpdate, setWaveUpdate] = useState(0);
-
   return (
     <>
       <Link href={href}>
         <nav
           key={href}
           className="nav-item"
-          onMouseEnter={() => setWaveUpdate(waveUpdate + 1)}
-          onMouseLeave={() => setWaveUpdate(waveUpdate + 1)}
         >
           <Wave
             color={Colors.main}
@@ -34,7 +30,6 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             viewBox={{ width: 100, height: 100 }}
             height={size ?? "5em"}
             width={size ?? "5em"}
-            update={waveUpdate}
           />
 
           <h1 className="unselectable">{text}</h1>

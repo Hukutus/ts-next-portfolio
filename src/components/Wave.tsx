@@ -22,8 +22,6 @@ export type WaveProps = {
   width?: number | string;
   viewBox?: ViewBox;
   fixedPoints?: { [key: number]: number };
-
-  update?: number;
 };
 
 const line = (a: PointType, b: PointType): LineType => {
@@ -91,11 +89,11 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
     setViewBox(props.viewBox ?? { width: 1000, height: 200 });
   }, [props.viewBox]);
 
-  const svgPathD = (): string => {
+  const svgPathD = (waves?: number): string => {
     // Get points
     const points: PointType[] = generatePoints(
       viewBox,
-      props.waves ?? 4,
+      waves ?? props.waves ?? 4,
       props.fixedPoints,
     );
 
@@ -104,8 +102,8 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
 
     // Build the path by looping over the points
     const d = points.reduce(
-      (acc, point, i, a) =>
-        i === 0 ? "" : `${acc} ${bezierCommand(point, i, a)}`,
+      (acc, point, i, arr) =>
+        i === 0 ? "" : `${acc} ${bezierCommand(point, i, arr)}`,
       "",
     );
 
@@ -124,7 +122,7 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
     }
 
     setPathD(svgPathD());
-  }, [viewBox, props.update]);
+  }, [viewBox]);
 
   return (
     <>
@@ -134,6 +132,7 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
           height={props.height}
           width={props.width}
+          onMouseEnter={() => setPathD(svgPathD())}
         >
           <path d={pathD} fill={props.color ?? "#2196f3"} stroke="none" />
         </svg>
