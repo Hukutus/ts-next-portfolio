@@ -9,6 +9,9 @@
     "starter",
     "typescript"
   ],
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",

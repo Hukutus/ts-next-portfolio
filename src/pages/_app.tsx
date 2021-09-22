@@ -12,7 +12,7 @@ const App: FC<any> = ({ Component, pageProps }) => (
   <>
     <Meta
       title="Topi Salonen"
-      description="I develop stuff for the web. Come check out some stuff I've made, like this page. Oh, and I like gamification!"
+      description="I develop stuff for the web. Come check out some of the stuff I've made, like this page."
       canonical="topisalonen.fi"
       image="/topi_500x500.png"
       styleSheets={[
