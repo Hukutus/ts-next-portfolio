@@ -1,8 +1,8 @@
 import { FC } from "react";
-import Meta from "@/components/Head";
-import Layout from "@/layouts/Layout";
 import { MDXProvider } from "@mdx-js/react";
 import Link from "next/link";
+import Meta from "@/components/Head";
+import Layout from "@/layouts/Layout";
 
 const components = {
   a: Link,

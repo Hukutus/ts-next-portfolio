@@ -1,6 +1,6 @@
 import { FC } from "react";
-import NavigationBar from "@/components/NavigationBar";
 import Image from "next/image";
+import NavigationBar from "@/components/NavigationBar";
 
 const Layout: FC<{ children: any }> = ({ children }) => (
   <>

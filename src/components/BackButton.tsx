@@ -1,5 +1,5 @@
-import Face from "@/components/Face";
 import { forwardRef } from "react";
+import Face from "@/components/Face";
 
 type Props = {
   onClick?: () => void;

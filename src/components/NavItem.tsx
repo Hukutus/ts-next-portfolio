@@ -20,10 +20,7 @@ const NavItem: FC<Readonly<NavItemType>> = ({
   return (
     <>
       <Link href={href}>
-        <nav
-          key={href}
-          className="nav-item"
-        >
+        <nav key={href} className="nav-item">
           <Wave
             color={Colors.main}
             waves={4}

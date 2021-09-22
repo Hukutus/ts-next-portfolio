@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
-import Colors from "@/utils/Colors";
 import Link from "next/link";
+import Colors from "@/utils/Colors";
 
 export type PortfolioItemType = {
   title: string;
@@ -47,7 +47,7 @@ export const HeaderImage: FC<{
   <>
     <div
       className="header-container"
-      style={{ height: "300px", width: "100%", ...(styles ?? {}) }}
+      style={{ height: "300px", width: "100%", ...styles }}
     >
       {src ? (
         <Image
@@ -90,6 +90,10 @@ export const HeaderImage: FC<{
     `}</style>
   </>
 );
+
+HeaderImage.defaultProps = {
+  styles: [],
+};
 
 export const PortfolioCard: FC<{
   src: string;

@@ -9,12 +9,15 @@ const getScrollPosition = (): number => {
   return window?.scrollY || document?.body?.getBoundingClientRect()?.top || 0;
 };
 
-const useScrollPosition = (effect, deps) => {
+const useScrollPosition = (
+  effect: ({ prevPos, currPos }) => void,
+  deps: any[],
+): void => {
   // Get starting position
   const position = useRef(getScrollPosition());
 
   // Get current position and send via effect prop
-  const updatePosition = () => {
+  const updatePosition = (): void => {
     const currentPosition: number = getScrollPosition();
 
     effect({ prevPos: position.current, currPos: currentPosition });

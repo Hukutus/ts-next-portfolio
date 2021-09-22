@@ -16,10 +16,8 @@ const getMetadata = async (key: string): Promise<PostInfo | null> => {
     if (module.metadata && slug.indexOf("_") !== 0) {
       return Object.assign(module.metadata, { path: `/Portfolio/${slug}` });
     }
-  }
-  catch (e) {
-    console.error("Error getting page metadata", e);
-    return Promise.reject("Error getting page metadata");
+  } catch (e) {
+    return Promise.reject(e);
   }
 
   return null;
@@ -30,20 +28,16 @@ const getPosts = async (): Promise<PostInfo[]> => {
     const context = require.context("@/pages/Portfolio", false, /\.mdx$/);
 
     // context.keys() has duplicates exported from either './' and '/pages/Portfolio/', filter outh the other
-    const keys: string[] = context.keys().filter(key => key.indexOf('./') === 0);
+    const keys: string[] = context
+      .keys()
+      .filter((key) => key.indexOf("./") === 0);
 
     // Wait for imports
-    return Promise
-      .all(keys.map((key) => getMetadata(key)))
-      .then(
-        (results) => results
-          .filter((result) => !!result)
-          .sort((a, b) => a.order - b.order),
-      );
-  }
-  catch (e) {
-    console.error("Error getting portfolio pages", e);
-    return Promise.reject("Error getting portfolio pages");
+    return Promise.all(keys.map((key) => getMetadata(key))).then((results) =>
+      results.filter((result) => !!result).sort((a, b) => a.order - b.order),
+    );
+  } catch (e) {
+    return Promise.reject(e);
   }
 };
 
