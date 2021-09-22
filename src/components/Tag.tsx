@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 const Tag: FC<Readonly<{ text: string }>> = ({ text }) => (
   <>
@@ -13,10 +13,7 @@ const Tag: FC<Readonly<{ text: string }>> = ({ text }) => (
           font-size: 0.7em;
           border-radius: 0.5em;
           padding: 0.2em 0.5em;
-
-          &:not(:first-child) {
-            margin-left: 0.5em;
-          }
+          margin: 0.25em;
         }
       `}
     </style>
@@ -35,7 +32,8 @@ const Tags: FC<Readonly<{ tags: string[] }>> = ({ tags }) => (
       {`
         .tags {
           display: flex;
-          margin-top: 1em;
+          margin: 1em -0.25em;
+          flex-wrap: wrap;
         }
       `}
     </style>

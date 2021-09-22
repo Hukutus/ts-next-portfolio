@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import Meta from "@/components/Head";
 import Layout from "@/layouts/Layout";
 import { MDXProvider } from "@mdx-js/react";

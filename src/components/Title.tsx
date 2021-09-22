@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 const Title: FC<Readonly<{ text: string }>> = ({
   text,

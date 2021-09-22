@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import NavItem, { NavItemType } from "@/components/NavItem";
 import Colors from "@/utils/Colors";
 import useScrollPosition from "@/components/UseScrollPosition";

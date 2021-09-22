@@ -1,5 +1,5 @@
-import React from "react";
 import Face from "@/components/Face";
+import { forwardRef } from "react";
 
 type Props = {
   onClick?: () => void;
@@ -7,7 +7,7 @@ type Props = {
   to: string;
 };
 
-const BackButton = React.forwardRef<HTMLAnchorElement, Props>((props, ref) => (
+const BackButton = forwardRef<HTMLAnchorElement, Props>((props, ref) => (
   <>
     <a href={props.href} onClick={props.onClick} ref={ref}>
       {/* Back {props.to ? ` to ${props.to}` : ""} */}

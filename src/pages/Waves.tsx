@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
 import Wave from "@/components/Wave";

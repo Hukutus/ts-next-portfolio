@@ -1,9 +1,9 @@
-import React from "react";
+import { FC } from "react";
 import Face from "@/components/Face";
 import Description from "@/markdown/Description.mdx";
 import Colors from "@/utils/Colors";
 
-const Home: React.FC = () => (
+const Home: FC = () => (
   <div className="container">
     <main>
       <Face />

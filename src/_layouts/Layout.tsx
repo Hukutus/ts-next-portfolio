@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import NavigationBar from "@/components/NavigationBar";
 import Image from "next/image";
 

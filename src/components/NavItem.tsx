@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC } from "react";
 import Link from "next/link";
 import Wave from "@/components/Wave";
 import Colors from "@/utils/Colors";

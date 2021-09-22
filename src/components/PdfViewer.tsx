@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 
 export type PdfViewerProps = {
