@@ -31,6 +31,13 @@ const Face: FC<FaceType> = (props: FaceType) => {
             border-radius: 50%;
             box-shadow: 0 0 0.5em ${Colors.shadow};
             overflow: hidden;
+
+            transition: transform 2s ease-in-out;
+
+            &:hover {
+              transform: rotate(360);
+              -webkit-transform: rotate(360deg);
+            }
           }
 
           .clickable {

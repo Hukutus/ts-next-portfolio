@@ -16,7 +16,7 @@ const App: FC<any> = ({ Component, pageProps }) => (
       canonical="topisalonen.fi"
       image="/topi_500x500.png"
       styleSheets={[
-        "https://fonts.googleapis.com/css2?family=Quicksand&amp;display=swap",
+        "https://fonts.googleapis.com/css2?family=Quicksand&family=Bebas+Neue&family=Lobster&amp;display=swap",
       ]}
       scripts={[]}
     />

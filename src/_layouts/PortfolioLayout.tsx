@@ -45,7 +45,7 @@ export const HeaderImage: FC<{
   styles?: Record<string, any>;
 }> = ({ src, alt, text, styles }) => (
   <>
-    <div
+    <nav
       className="header-container"
       style={{ height: "300px", width: "100%", ...styles }}
     >
@@ -62,7 +62,7 @@ export const HeaderImage: FC<{
       )}
 
       <h1>{text}</h1>
-    </div>
+    </nav>
     <style jsx>{`
       .header-container {
         position: relative;

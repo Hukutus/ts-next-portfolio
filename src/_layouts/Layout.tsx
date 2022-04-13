@@ -1,11 +1,12 @@
 import { FC } from "react";
 import Image from "next/image";
 import NavigationBar from "@/components/NavigationBar";
+import Colors from "@/utils/Colors";
 
 const Layout: FC<{ children: any }> = ({ children }) => (
   <>
     <div className="layout">
-      <div className="bg-wrap">
+      {/*<div className="bg-wrap">
         <Image
           alt="Succulent"
           src="/pexels-scott-webb-305821.jpg"
@@ -13,7 +14,7 @@ const Layout: FC<{ children: any }> = ({ children }) => (
           layout="fill"
           objectFit="cover"
         />
-      </div>
+      </div>*/}
 
       <NavigationBar />
 
@@ -31,6 +32,7 @@ const Layout: FC<{ children: any }> = ({ children }) => (
 
       .layout {
         min-height: 100vh;
+        background-color: ${Colors.sixty};
 
         display: flex;
         flex-direction: column;

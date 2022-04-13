@@ -8,7 +8,7 @@ const NavigationBar: FC = () => {
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      const showNavigation: boolean = currPos > prevPos;
+      const showNavigation: boolean = currPos > 0 && currPos > prevPos;
 
       if (showNavigation !== stickyVisible) {
         // Set visibility if value changed
@@ -29,7 +29,7 @@ const NavigationBar: FC = () => {
     <>
       <nav className={`nav-container ${stickyVisible ? "sticky" : ""}`}>
         {navItems.map((item: NavItemType) => (
-          <NavItem key={item.href} {...item} size="4em" fontSize="1em" />
+          <NavItem key={item.href} {...item} size="5em" fontSize="1em" />
         ))}
       </nav>
 
@@ -41,6 +41,7 @@ const NavigationBar: FC = () => {
 
             display: flex;
             align-items: center;
+            justify-content: center;
 
             padding: 1em 0;
             z-index: 1;
@@ -57,11 +58,11 @@ const NavigationBar: FC = () => {
             transform: translateY(-100%);
           }
 
-          @media only screen and (max-width: 820px) {
+          /*@media only screen and (max-width: 820px) {
             .nav-container {
               justify-content: space-around;
             }
-          }
+          }*/
         `}
       </style>
     </>

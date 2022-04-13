@@ -4,16 +4,15 @@ import Description from "@/markdown/Description.mdx";
 import Colors from "@/utils/Colors";
 
 const Home: FC = () => (
-  <div className="container">
-    <main>
+  <main className="main-container">
+    <section className={"heading-container"}>
       <Face />
+      <h1>Topi Salonen</h1>
+    </section>
 
-      <div className="info-container">
-        <div className="text-container">
-          <Description />
-        </div>
-      </div>
-    </main>
+    <section className="info-container">
+      <Description />
+    </section>
 
     <style jsx>
       {`
@@ -25,11 +24,24 @@ const Home: FC = () => (
           z-index: -1;
         }
 
-        .info-container {
+        .heading-container {
           display: flex;
           flex-direction: column;
-          padding: 1em;
-          border-radius: 0.2em;
+          align-items: center;
+        }
+
+        h1 {
+          font-family: Lobster, sans-serif;
+          color: ${Colors.text};
+          text-shadow: 2px 2px 2px white;
+          font-size: 3em;
+          margin: 0.2em 0;
+        }
+
+        .info-container {
+          display: block;
+          padding: 0 1em;
+          border-radius: 0.5em;
           margin-top: 2em;
 
           min-height: 15em;
@@ -39,16 +51,13 @@ const Home: FC = () => (
           font-family: Quicksand, sans-serif;
           font-size: 1em;
 
-          background: rgba(255, 255, 255, 0.8);
+          background: white;
+          color: ${Colors.text};
           box-shadow: 0 0.2em 0.4em ${Colors.shadow};
         }
 
         .info-below-image {
           height: 123px;
-        }
-
-        .text-container {
-          display: block;
         }
 
         .wave-box {
@@ -61,7 +70,7 @@ const Home: FC = () => (
           display: flex;
         }
 
-        .container {
+        .main-container {
           flex: 1;
           padding: 0 0.5em;
           display: flex;
@@ -169,7 +178,7 @@ const Home: FC = () => (
         }
       `}
     </style>
-  </div>
+  </main>
 );
 
 export default Home;

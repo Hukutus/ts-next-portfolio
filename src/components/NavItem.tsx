@@ -21,13 +21,13 @@ const NavItem: FC<Readonly<NavItemType>> = ({
     <>
       <Link href={href}>
         <nav key={href} className="nav-item">
-          <Wave
+          {/*<Wave
             color={Colors.main}
             waves={4}
             viewBox={{ width: 100, height: 100 }}
             height={size ?? "5em"}
             width={size ?? "5em"}
-          />
+          />*/}
 
           <h1 className="unselectable">{text}</h1>
         </nav>
@@ -53,13 +53,13 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             margin-left: 1em;
             border-radius: 50%;
             overflow: hidden;
-            background: ${Colors.light};
+            background-color: transparent;
 
-            transition: box-shadow 0.2s ease;
-            box-shadow: 0 0 0.2em ${Colors.shadow};
+            transition: box-shadow 0.2s ease, background-color 0.3s ease;
+            box-shadow: 0 0 0.2em ${Colors.shadow}, inset -0.2em -0.3em 0.5em rgba(0,0,0,0.5), inset 0.3em 0.4em 0.5em rgba(255,255,255,0.7);
 
             &:hover {
-              box-shadow: 0 0 0.4em ${Colors.shadow};
+              background-color: white;
             }
           }
 

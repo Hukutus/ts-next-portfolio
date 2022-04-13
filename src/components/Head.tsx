@@ -23,8 +23,9 @@ const Meta: FC<Readonly<MetaProps>> = ({
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/png" href="/public/favicon.png" />
-    <link rel="apple-touch-icon" href="/public/favicon.png" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <meta property="og:type" content="website" />
     <meta name="og:title" property="og:title" content={title} />
