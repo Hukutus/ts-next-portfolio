@@ -3,6 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Link from "next/link";
 import Meta from "@/components/Head";
 import Layout from "@/layouts/Layout";
+import Colors from "@/utils/Colors";
 
 const components = {
   a: Link,
@@ -36,7 +37,8 @@ const App: FC<any> = ({ Component, pageProps }) => (
           padding: 0;
           margin: 0;
 
-          color: $dark-gray;
+          background-color: ${Colors.main};
+          color: ${Colors.text};
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 
 export type PointType = {
   x: number;
@@ -22,6 +22,7 @@ export type WaveProps = {
   width?: number | string;
   viewBox?: ViewBox;
   fixedPoints?: { [key: number]: number };
+  resetOnHover?: boolean;
 };
 
 const line = (a: PointType, b: PointType): LineType => {
@@ -81,48 +82,43 @@ const generatePoints = (
           : randomY(viewBox),
     }));
 
-const Wave: FC<WaveProps> = (props: WaveProps) => {
+const svgPathD = ({ viewBox, waves, fixedPoints }: WaveProps): string => {
+  // Get points
+  const points: PointType[] = generatePoints(viewBox, waves || 4, fixedPoints);
+
+  // Start at bottom left
+  const pathStart = `M0,${viewBox.height},0,${points[0].y}`;
+
+  // Build the path by looping over the points
+  const d = points.reduce(
+    (acc, point, i, arr) =>
+      i === 0 ? "" : `${acc} ${bezierCommand(point, i, arr)}`,
+    "",
+  );
+
+  // Go around to create a complete shape
+  const pathEnd = `M${viewBox.width},${points[points.length - 1].y} ${
+    viewBox.width
+  },${viewBox.height} 0,${viewBox.height}`;
+
+  // Combine start, generated bezier and end
+  return pathStart + d + pathEnd;
+};
+
+const Wave: FC<WaveProps> = ({
+  viewBox = { width: 1000, height: 200 },
+  waves,
+  fixedPoints,
+  height,
+  width,
+  color,
+  resetOnHover,
+}: WaveProps) => {
   const [pathD, setPathD] = useState("");
-  const [viewBox, setViewBox] = useState(null);
 
   useEffect(() => {
-    setViewBox(props.viewBox ?? { width: 1000, height: 200 });
-  }, [props.viewBox]);
-
-  const svgPathD = (waves?: number): string => {
-    // Get points
-    const points: PointType[] = generatePoints(
-      viewBox,
-      waves ?? props.waves ?? 4,
-      props.fixedPoints,
-    );
-
-    // Start at bottom left
-    const pathStart = `M0,${viewBox.height},0,${points[0].y}`;
-
-    // Build the path by looping over the points
-    const d = points.reduce(
-      (acc, point, i, arr) =>
-        i === 0 ? "" : `${acc} ${bezierCommand(point, i, arr)}`,
-      "",
-    );
-
-    // Go around to create a complete shape
-    const pathEnd = `M${viewBox.width},${points[points.length - 1].y} ${
-      viewBox.width
-    },${viewBox.height} 0,${viewBox.height}`;
-
-    // Combine start, generated bezier and end
-    return pathStart + d + pathEnd;
-  };
-
-  useEffect(() => {
-    if (!viewBox) {
-      return;
-    }
-
-    setPathD(svgPathD());
-  }, [viewBox]);
+    setPathD(svgPathD({ viewBox, waves, fixedPoints }));
+  }, [viewBox, waves, fixedPoints]);
 
   return (
     <>
@@ -130,11 +126,13 @@ const Wave: FC<WaveProps> = (props: WaveProps) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox={`0 0 ${viewBox.width} ${viewBox.height}`}
-          height={props.height}
-          width={props.width}
-          onMouseEnter={() => setPathD(svgPathD())}
+          height={height}
+          width={width}
+          onMouseEnter={() =>
+            resetOnHover && setPathD(svgPathD({ viewBox, waves, fixedPoints }))
+          }
         >
-          <path d={pathD} fill={props.color ?? "#2196f3"} stroke="none" />
+          <path d={pathD} fill={color ?? "#2196f3"} stroke="none" />
         </svg>
       ) : (
         <></>

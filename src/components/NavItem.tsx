@@ -29,14 +29,13 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             width={size ?? "5em"}
           />*/}
 
-          <h1 className="unselectable">{text}</h1>
+          <p className="unselectable">{text}</p>
         </nav>
       </Link>
 
       <style jsx>
         {`
-          h1 {
-            position: absolute;
+          p {
             font-size: ${fontSize ?? "1.5em"};
             font-family: Quicksand, sans-serif;
             color: ${Colors.text};
@@ -53,7 +52,8 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             margin-left: 1em;
             border-radius: 50%;
             overflow: hidden;
-            background-color: transparent;
+            background-color: white;
+            z-index: 1;
 
             transition: box-shadow 0.2s ease, background-color 0.3s ease;
             box-shadow: 0 0 0.2em ${Colors.shadow},
@@ -61,15 +61,15 @@ const NavItem: FC<Readonly<NavItemType>> = ({
               inset 0.3em 0.4em 0.5em rgba(255, 255, 255, 0.7);
 
             &:hover {
-              background-color: white;
+              background-color: ${Colors.background};
             }
           }
 
-          @media only screen and (max-width: 820px) {
+          /*@media only screen and (max-width: 820px) {
             .nav-item {
               margin: 0;
             }
-          }
+          }*/
         `}
       </style>
     </>
