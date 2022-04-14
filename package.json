@@ -21,6 +21,7 @@
     "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "lint-fix": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --fix",
+    "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "prettier-fix": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "predeploy": "npm run build",
     "upgrade-all": "yarn yarn-upgrade-all"
@@ -34,8 +35,8 @@
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
-      "yarn lint --fix",
-      "yarn prettier --fix"
+      "yarn lint-fix",
+      "yarn prettier-fix"
     ]
   },
   "dependencies": {
