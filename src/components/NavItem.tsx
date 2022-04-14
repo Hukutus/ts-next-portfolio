@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import Wave from "@/components/Wave";
+// import Wave from "@/components/Wave";
 import Colors from "@/utils/Colors";
 
 export type NavItemType = {
@@ -56,7 +56,9 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             background-color: transparent;
 
             transition: box-shadow 0.2s ease, background-color 0.3s ease;
-            box-shadow: 0 0 0.2em ${Colors.shadow}, inset -0.2em -0.3em 0.5em rgba(0,0,0,0.5), inset 0.3em 0.4em 0.5em rgba(255,255,255,0.7);
+            box-shadow: 0 0 0.2em ${Colors.shadow},
+              inset -0.2em -0.3em 0.5em rgba(0, 0, 0, 0.5),
+              inset 0.3em 0.4em 0.5em rgba(255, 255, 255, 0.7);
 
             &:hover {
               background-color: white;

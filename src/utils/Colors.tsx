@@ -8,7 +8,7 @@ const Colors = {
   sixty: "#f5f5f0",
   thirty: "#ffd4005e",
   ten: "#efff00d1",
-  activeButton: "#ff9e00d1"
+  activeButton: "#ff9e00d1",
 };
 
 export default Colors;

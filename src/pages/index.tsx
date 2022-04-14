@@ -5,7 +5,7 @@ import Colors from "@/utils/Colors";
 
 const Home: FC = () => (
   <main className="main-container">
-    <section className={"heading-container"}>
+    <section className="heading-container">
       <Face />
       <h1>Topi Salonen</h1>
     </section>
