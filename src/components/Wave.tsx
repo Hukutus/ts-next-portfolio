@@ -147,14 +147,17 @@ const Wave: FC<WaveProps> = ({
           svg {
             transform-origin: bottom;
             animation: animateWave 0.3s ease forwards;
+            -webkit-animation: animateWave 0.3s ease forwards;
           }
 
           @keyframes animateWave {
             0% {
               transform: scale(1, 0);
+              -webkit-transform: scale(1, 0);
             }
             100% {
               transform: scale(1, 1);
+              -webkit-transform: scale(1, 1);
             }
           }
         `}

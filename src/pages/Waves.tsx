@@ -49,6 +49,7 @@ const Waves: FC = () => {
 
           left: 50%;
           transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
           top: 2em;
 
           transition: background-color 0.2s ease-in;

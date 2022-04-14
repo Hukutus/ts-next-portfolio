@@ -60,6 +60,7 @@ const NavigationBar: FC = () => {
             z-index: 1;
 
             transform: translateY(0);
+            -webkit-transform: translateY(0);
             transition: transform 0.2s ease-in;
 
             height: 5.5em;
@@ -67,6 +68,7 @@ const NavigationBar: FC = () => {
 
           .sticky {
             transform: translateY(-100%);
+            -webkit-transform: translateY(-100%);
           }
 
           /*@media only screen and (max-width: 820px) {
@@ -81,6 +83,7 @@ const NavigationBar: FC = () => {
             top: 0;
             width: 100%;
             transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
           }
         `}
       </style>
