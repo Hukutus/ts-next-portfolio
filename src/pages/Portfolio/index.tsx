@@ -49,7 +49,6 @@ const Portfolio: FC = () => {
 
         .portfolio-container {
           font-family: Quicksand, sans-serif;
-          font-size: 1.5em;
 
           background: rgba(255, 255, 255, 0.8);
           box-shadow: 0 0.2em 0.4em ${Colors.shadow};

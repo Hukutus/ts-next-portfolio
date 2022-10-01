@@ -1,34 +1,31 @@
 import { FC } from "react";
 import Link from "next/link";
-// import Wave from "@/components/Wave";
 import Colors from "@/utils/Colors";
 
 export type NavItemType = {
   image?: string;
   text?: string;
   href: string;
-  size?: string | number;
+  width?: string | number;
   fontSize?: string | number;
+  selected?: boolean;
 };
 
 const NavItem: FC<Readonly<NavItemType>> = ({
   text,
   href,
-  size,
+  width,
   fontSize,
+  selected,
 }: Readonly<NavItemType>) => {
   return (
     <>
       <Link href={href}>
-        <nav key={href} className="nav-item">
-          {/*<Wave
-            color={Colors.main}
-            waves={4}
-            viewBox={{ width: 100, height: 100 }}
-            height={size ?? "5em"}
-            width={size ?? "5em"}
-          />*/}
-
+        <nav
+          key={href}
+          className={`nav-item ${selected ? "selected" : ""}`}
+          aria-label={text}
+        >
           <p className="unselectable">{text}</p>
         </nav>
       </Link>
@@ -47,29 +44,20 @@ const NavItem: FC<Readonly<NavItemType>> = ({
             align-items: center;
 
             cursor: pointer;
-            height: ${size ?? "5em"};
-            width: ${size ?? "5em"};
+            width: ${width ?? "5em"};
             margin-left: 1em;
-            border-radius: 50%;
-            overflow: hidden;
             background-color: white;
-            z-index: 1;
 
-            transition: box-shadow 0.2s ease, background-color 0.3s ease;
-            box-shadow: 0 0 0.2em ${Colors.shadow},
-              inset -0.2em -0.3em 0.5em rgba(0, 0, 0, 0.5),
-              inset 0.3em 0.4em 0.5em rgba(255, 255, 255, 0.7);
+            transition: background-color 0.3s ease;
 
             &:hover {
               background-color: ${Colors.background};
             }
-          }
 
-          /*@media only screen and (max-width: 820px) {
-            .nav-item {
-              margin: 0;
+            &.selected {
+              background-color: ${Colors.background};
             }
-          }*/
+          }
         `}
       </style>
     </>

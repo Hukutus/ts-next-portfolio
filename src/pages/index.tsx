@@ -60,16 +60,6 @@ const Home: FC = () => (
           height: 123px;
         }
 
-        .wave-box {
-          width: 100vw;
-
-          position: absolute;
-          bottom: 0;
-          z-index: -1;
-
-          display: flex;
-        }
-
         .main-container {
           flex: 1;
           padding: 0 0.5em;
@@ -85,6 +75,7 @@ const Home: FC = () => (
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          margin-top: 2em;
         }
 
         footer {

@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
+import { useRouter } from "next/router";
 import NavItem, { NavItemType } from "@/components/NavItem";
-import Colors from "@/utils/Colors";
 import useScrollPosition from "@/components/UseScrollPosition";
-import Wave from "@/components/Wave";
 
 const NavigationBar: FC = () => {
   const [stickyVisible, setStickyVisible] = useState(false);
+  const { pathname } = useRouter();
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -29,20 +29,13 @@ const NavigationBar: FC = () => {
   return (
     <>
       <nav className={`nav-container ${stickyVisible ? "sticky" : ""}`}>
-        <div className="wave-container">
-          <Wave
-            color={Colors.main}
-            waves={6}
-            viewBox={{ width: 1500, height: 100 }}
-            fixedPoints={{ 0: 100, 2: 50, 3: 50, 6: 100 }}
-            height="100%"
-            width="100%"
-            resetOnHover
-          />
-        </div>
-
         {navItems.map((item: NavItemType) => (
-          <NavItem key={item.href} {...item} size="4.5em" fontSize="1em" />
+          <NavItem
+            key={item.href}
+            {...item}
+            selected={item.href === pathname}
+            fontSize="1em"
+          />
         ))}
       </nav>
 
@@ -51,19 +44,19 @@ const NavigationBar: FC = () => {
           .nav-container {
             position: sticky;
             top: 0;
+            margin-bottom: 2em;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            padding: 1em 0;
             z-index: 1;
 
             transform: translateY(0);
             -webkit-transform: translateY(0);
             transition: transform 0.2s ease-in;
 
-            height: 5.5em;
+            background-color: white;
           }
 
           .sticky {
@@ -76,15 +69,6 @@ const NavigationBar: FC = () => {
               justify-content: space-around;
             }
           }*/
-
-          .wave-container {
-            position: absolute;
-            display: flex;
-            top: 0;
-            width: 100%;
-            transform: rotate(180deg);
-            -webkit-transform: rotate(180deg);
-          }
         `}
       </style>
     </>

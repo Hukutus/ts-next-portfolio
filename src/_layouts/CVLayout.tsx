@@ -8,7 +8,7 @@ const CVLayout: FC = ({ children }) => (
     <style jsx>{`
       main {
         font-family: Quicksand, sans-serif;
-        font-size: 1.5em;
+        font-size: 1em;
 
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 0.2em 0.4em ${Colors.shadow};
