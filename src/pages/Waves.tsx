@@ -18,7 +18,7 @@ const Waves: FC = () => {
       </div>
 
       <div className="link-container">
-        <Link href="/" passHref>
+        <Link href="/" passHref legacyBehavior>
           <BackButton to="Home" />
         </Link>
       </div>

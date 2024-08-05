@@ -20,7 +20,7 @@ const NavItem: FC<Readonly<NavItemType>> = ({
 }: Readonly<NavItemType>) => {
   return (
     <>
-      <Link href={href}>
+      <Link href={href} legacyBehavior>
         <nav
           key={href}
           className={`nav-item ${selected ? "selected" : ""}`}

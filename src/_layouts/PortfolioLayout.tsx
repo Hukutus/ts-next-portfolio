@@ -107,7 +107,7 @@ export const PortfolioCard: FC<{
 
   return (
     <>
-      <Link href={path}>
+      <Link href={path} legacyBehavior>
         <a href={path}>
           <HeaderImage
             src={src}
