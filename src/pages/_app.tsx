@@ -23,6 +23,7 @@ const App: FC<any> = ({ Component, pageProps }) => (
     />
 
     <Layout>
+      {/* @ts-expect-error: Type mismatch but works */}
       <MDXProvider components={components}>
         <Component {...pageProps} />
       </MDXProvider>
