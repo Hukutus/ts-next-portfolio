@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,13 +19,31 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "paths": {
-      "@/includes/*": ["_includes/*"],
-      "@/layouts/*": ["_layouts/*"],
-      "@/markdown/*": ["_markdown/*"],
-      "@/api": ["api/index"],
-      "@/*": ["./*"]
-    }
+      "@/includes/*": [
+        "_includes/*"
+      ],
+      "@/layouts/*": [
+        "_layouts/*"
+      ],
+      "@/markdown/*": [
+        "_markdown/*"
+      ],
+      "@/api": [
+        "api/index"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "incremental": true
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mdx"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mdx"
+  ]
 }
