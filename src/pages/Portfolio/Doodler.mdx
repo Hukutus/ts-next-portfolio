@@ -24,25 +24,22 @@ export const metadata = {
 
 **Motivation**
 
-While working for NordicEdu we often played games during coffee breaks. One of those games go by the name **Scribbl.io**.
+While working for NordicEdu we often played games during coffee breaks. One of those games was a drawing game called **Scribbl.io**.
+When I was younger I enjoyed a game called *Kuva-arvoitus* from a Finnish game site called **Aapeli** (they shut down some years ago).
+I remember spending hours and hours playing that game.
 
-When I was younger I enjoyed a game called *Kuva-arvoitus* from a Finnish Java game site called **Aapeli** (they shut down a couple of years ago, likely because of the whole Java thing).
-I spent hours playing that game.
-
-So, why not try to make a drawing app myself?
+So I thought why not to create my own drawing app.
+I mainly wanted to have a simple canvas to draw on with different colors and shapes by using the mouse.
 
 **Technical stuff**
 
-This is another **React** project with no planned back-end (yet).
-I basically wanted to have the option to draw on the screen using the mouse with different colors and brushes.
+This is another simple **React** project with no plans for a backend.
+The drawing board is a **HTML canvas** element that listens to the mouse move during the mouse-down event, and then draws a line between the points.
+I hadn't used canvas before, so this was an interesting exercise.
 
-The end result is quite simple, since it's basically just a **HTML canvas** element that listens to mouse move during mouse-down, and draws lines between points.
+**Future improvements**
 
-**TODO or not TODO**
-
-Since the canvas draws a line between each point the app draws a ton of extra lines and won't work with opacity.
-I'd need to remove the previous lines and just draw one line to replace it, going through all the points the mouse has been in.
-
-I'd like to add a social aspect, where users could see each other draw. This could be done with **WebSockets** or by using **Firebase**.
+- Sockets to allow multiplayer
+- Allow setting opacity (current implementation doesn't really support it)
 
 export default PortfolioLayout;

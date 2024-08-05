@@ -25,30 +25,29 @@ export const metadata = {
 **Motivation**
 
 This is another hobby project about board gaming (the other being [Wingspan soundboard](/Portfolio/Wingspan)).
-When scheduling game nights the same question keeps popping up almost every time: *What should we play?*.
-In the end everyone brings a ton of games, but we play only few of them.
+During game nights the same two questions always pop up: *What should we play?* and *What should we play next?*.
+In the end everyone brings a ton of games, but we just don't have the time to play them all.
 
-To make this easier I came up with an idea *Tinder-ish thing for board games*.
-We could combine all the games from the participants' collections, sort them by the best player count, and let people vote on their favorites.
+To try to make planning easier I came up with an idea *Tinder-ish app for board games*, which could combine all the games
+from each of the participants' game collections to allow the participants to decide some the games to play beforehand.
+
+The app can be used to create a game night with specific players, after which the all the participants can vote for their favourites.
+Most boardgames have recommended and best amount of players, which can be used to filter out games that don't fit for the number of participants.
+These features could possibly reduce the time needed to figure out what each player wants to play.
 
 **Technical stuff**
 
-**React + TypeScript** is my usual go-to for my hobby projects, but this time I used **React Native** (with TypeScript) and functional programming.
-I got my first real taste of FP at work when we started a new **React Native** project at work, and after being very confused for a while I started enjoying it.
-There's isn't any other reason why I used React Native other than to challenge myself. I intend to keep the app usable in a browser with **react-native-web**.
+**React + TypeScript** is currently my usual go-to for hobby projects since it's a familiar combination,
+but this time I went with **React Native** to keep focus on the mobile side of things and to challenge myself.
+I intended to keep the app usable in a browser with **react-native-web**, but gave up with the plan once I started encountering issues with the library.
 
-Most of our gaming group uses **BoardGameGeek** (BGG) to keep their game collection, and BGG happens to have a public API. The annoying part: it's an XML API.
-Instead of straight up using a clean response I need to convert the XML to an object with **xml-2-json** and then clean up the thing that says *items[0].item.$.value*.
-With the data the app can display all the games in all our collections inside a lazy-loaded FlatList.
+Many of my board gaming friends use a website called **BoardGameGeek** to keep track of their game collections.
+The site also has a public XML API that can used to fetch game collections belonging to specific users.
 
-You can make a game night in the app by selecting a date and the players.
-If someone doesn't have a BGG user, you can just add an empty player to get the correct amount of players.
+**Future improvements**
 
-**TODO or not TODO**
-
-The whole Tinder part is still a work in progress. You can view games, but you can't vote yet.
-I'm also unsure how I'd go with the whole authentication thing, so that the players who are attending the
-game night can come join the vote.
-I haven't really worked with the UI design yet, so the app is very ugly.
+- Voting has not yet been fully implemented, so you can only view the game collections of users
+- There should be some kind of authentication for being allowed to join a game night
+- Needs a proper UI
 
 export default PortfolioLayout;
