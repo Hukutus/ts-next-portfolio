@@ -1,11 +1,11 @@
-import { Lobster } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./navbar.module.css";
+import { Lobster } from 'next/font/google';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './navbar.module.css';
 
 const lobster = Lobster({
   subsets: ['latin'],
-  weight: "400",
+  weight: '400',
 });
 
 export default function Navbar() {

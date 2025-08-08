@@ -1,3 +1,1 @@
-export default function Sticker() {
-
-};
+export default function Sticker() {}
