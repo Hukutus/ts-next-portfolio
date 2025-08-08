@@ -1,7 +1,11 @@
-import { FC } from "react";
+import React from "react";
 import Colors from "@/utils/Colors";
 
-const CVLayout: FC = ({ children }) => (
+type Props = {
+  children: React.ReactNode;
+};
+
+const CVLayout: React.FC<Props> = ({ children }: Props) => (
   <>
     <main>{children}</main>
 
