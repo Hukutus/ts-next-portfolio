@@ -1,9 +1,18 @@
+'use client';
+
+import Description from '@/mdx/Description.mdx';
 import styles from './page.module.css';
+import CV from '../mdx/CV.mdx';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>Home TODO</main>
-    </div>
+    <main className={styles.page}>
+      <div className={`${styles.container} ${styles['no-stretch']}`}>
+        <Description />
+      </div>
+      <div className={styles.container}>
+        <CV />
+      </div>
+    </main>
   );
 }

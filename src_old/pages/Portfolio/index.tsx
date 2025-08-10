@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { PortfolioCard } from "@/layouts/PortfolioLayout";
-import Colors from "@/utils/Colors";
+import Colors from "@/_utils/Colors";
 import { getPosts, PostInfo } from "@/api";
 
 const Portfolio: FC = () => {

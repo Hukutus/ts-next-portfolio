@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Face from "@/components/Face";
 import Description from "@/markdown/Description.mdx";
-import Colors from "@/utils/Colors";
+import Colors from "@/_utils/Colors";
 
 const Home: FC = () => (
   <main className="main-container">

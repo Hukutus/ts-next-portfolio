@@ -1,7 +1,7 @@
 import { FC } from "react";
 // import Image from "next/image";
 import NavigationBar from "@/components/NavigationBar";
-import Colors from "@/utils/Colors";
+import Colors from "@/_utils/Colors";
 
 const Layout: FC<{ children: any }> = ({ children }) => (
   <>

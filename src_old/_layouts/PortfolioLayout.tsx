@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Colors from "@/utils/Colors";
+import Colors from "@/_utils/Colors";
 
 export type PortfolioItemType = {
   title: string;

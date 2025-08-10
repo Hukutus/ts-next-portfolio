@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import Colors from "@/utils/Colors";
+import Colors from "@/_utils/Colors";
 
 export type FaceType = {
   size?: string | number;

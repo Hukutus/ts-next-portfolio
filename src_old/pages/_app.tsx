@@ -3,7 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Link from "next/link";
 import Meta from "@/components/Head";
 import Layout from "@/layouts/Layout";
-import Colors from "@/utils/Colors";
+import Colors from "@/_utils/Colors";
 
 const components = {
   a: Link,
