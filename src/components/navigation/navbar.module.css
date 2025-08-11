@@ -16,7 +16,6 @@ h1.title {
 }
 
 .nav-flex {
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -44,6 +43,6 @@ h1.title {
   transition: background-color 0.2s linear;
 }
 
-.nav-button.nav-selected, .nav-button:hover {
-  background-color: #ffe788;
+.nav-button:hover {
+  background-color: var(--gradient-bottom);
 }

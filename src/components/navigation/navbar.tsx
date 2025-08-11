@@ -4,15 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './navbar.module.css';
 import localFont from 'next/font/local';
-import { usePathname } from 'next/navigation';
+import ThemeButton from '@/components/ThemeButton';
 
 const croquete = localFont({
   src: '../../../public/Daily Croquete.otf',
 });
 
 export default function Navbar() {
-  const pathname = usePathname();
-
   return (
     <header className={styles['nav-flex']}>
       <div className={styles['sticker-container']}>
@@ -27,17 +25,13 @@ export default function Navbar() {
 
       <h1 className={`${styles.title} ${croquete.className}`}>Topi Salonen</h1>
 
+      <ThemeButton />
+
       <nav aria-label="Main navigation" className={styles['nav-bar']}>
-        <Link
-          href="/"
-          className={`${styles['nav-button']} ${pathname === '/' && styles['nav-selected']}`}
-        >
+        <Link href="/" className={`${styles['nav-button']}`}>
           Projects
         </Link>
-        <Link
-          href="/cv"
-          className={`${styles['nav-button']} ${pathname === '/cv' && styles['nav-selected']}`}
-        >
+        <Link href="/cv" className={`${styles['nav-button']}`}>
           CV
         </Link>
       </nav>
