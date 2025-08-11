@@ -26,10 +26,6 @@ h1.title {
 
 .sticker {
   position: absolute;
-  border: 0.4em solid white;
-  border-radius: 0.1em;
-  transform: rotate(-2deg);
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .sticker-container {
@@ -45,8 +41,9 @@ h1.title {
   padding: 0.5em;
   box-shadow: 0.2em 0.2em;
   font-family: 'croquete';
+  transition: background-color 0.2s linear;
 }
 
-.nav-button.nav-selected {
+.nav-button.nav-selected, .nav-button:hover {
   background-color: #ffe788;
 }

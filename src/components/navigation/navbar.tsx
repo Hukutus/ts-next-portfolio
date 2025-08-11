@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className={styles['nav-flex']}>
       <div className={styles['sticker-container']}>
         <Image
-          className={styles.sticker}
+          className={`sticker ${styles.sticker}`}
           src="/topi_500x500.png"
           alt=""
           width={100}

@@ -11,7 +11,7 @@
   gap: 0.5em;
   align-items: center;
   justify-items: center;
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-quicksand-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +22,13 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    display: flex;
+    flex-direction: column;
   }
 }
 
