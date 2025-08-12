@@ -6,12 +6,13 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
+  font-family: var(--font-quicksand-sans);
+}
+
+.homepage {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 0.5em;
-  align-items: center;
-  justify-items: center;
-  font-family: var(--font-quicksand-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,6 +36,7 @@
 .container {
   display: flex;
   flex-direction: column;
+
   background-color: var(--container-bg);
   color: var(--container-text);
 
@@ -42,6 +44,11 @@
   height: 100%;
   padding: 1em;
   border-radius: 0.5em;
+}
+
+.centered {
+  justify-content: center;
+  align-items: center;
 }
 
 .no-stretch {

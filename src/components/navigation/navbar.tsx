@@ -25,8 +25,6 @@ export default function Navbar() {
 
       <h1 className={`${styles.title} ${croquete.className}`}>Topi Salonen</h1>
 
-      <ThemeButton />
-
       <nav aria-label="Main navigation" className={styles['nav-bar']}>
         <Link href="/" className={`${styles['nav-button']}`}>
           Projects
@@ -34,6 +32,8 @@ export default function Navbar() {
         <Link href="/cv" className={`${styles['nav-button']}`}>
           CV
         </Link>
+
+        <ThemeButton />
       </nav>
     </header>
   );

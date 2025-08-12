@@ -33,6 +33,23 @@ h1.title {
   width: 110px;
 }
 
+@media (max-width: 900px) {
+  /* Align image to top */
+  .sticker-container {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+
+  /* Separate buttons */
+  nav.nav-bar {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 0 1em;
+  }
+}
+
 .nav-button {
   border-radius: 1em;
   text-align: center;

@@ -13,3 +13,9 @@
 .icon-button:hover {
     color: var(--gradient-top);
 }
+
+@media (max-width: 900px) {
+    .icon-button {
+        bottom: unset;
+    }
+}
