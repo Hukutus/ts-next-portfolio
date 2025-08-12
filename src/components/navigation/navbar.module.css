@@ -34,15 +34,16 @@ h1.title {
 }
 
 .nav-button {
-  background: ghostwhite;
   border-radius: 1em;
   text-align: center;
   padding: 0.5em;
-  box-shadow: 0.2em 0.2em;
+  background-color: var(--title-text);
+  box-shadow: 0.2em 0.2em var(--foreground);
+  color: var(--foreground);
   font-family: 'croquete';
-  transition: background-color 0.2s linear;
+  transition: color 0.2s linear;
 }
 
 .nav-button:hover {
-  background-color: var(--gradient-bottom);
+  color: var(--gradient-top);
 }
