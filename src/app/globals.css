@@ -92,7 +92,14 @@ h2, h3 {
   animation: shake-rotate 500ms cubic-bezier(.36,.07,.19,.97);
 }
 
-.projects-container p {
+.separator {
+  height: 0.2em;
+  width: 100%;
+  background: var(--gradient-bottom);
+  margin-bottom: 1em;
+}
+
+/*.projects-container p {
   display: flex;
   gap: 1em;
   margin-bottom: 2em;
@@ -100,4 +107,4 @@ h2, h3 {
 
 .projects-container img:nth-of-type(even) {
   transform: rotate(2deg);
-}
+}*/

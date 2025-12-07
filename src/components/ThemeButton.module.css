@@ -1,5 +1,5 @@
 .icon-button {
-    position: absolute;
+    position: fixed;
     bottom: 0.5em;
     right: 0.5em;
 
@@ -16,6 +16,7 @@
 
 @media (max-width: 900px) {
     .icon-button {
+        position: absolute;
         bottom: unset;
     }
 }

@@ -2,7 +2,6 @@ import type { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 
 const components: MDXComponents = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   img: (props: any) => (
     <Image
       {...props}

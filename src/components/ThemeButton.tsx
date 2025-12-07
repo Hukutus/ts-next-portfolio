@@ -1,19 +1,9 @@
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
-import styles from './ThemeButton.module.css';
 import { Sunrise, Sunset } from 'lucide-react';
+import styles from './ThemeButton.module.css';
 
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return <button className={styles['icon-button']} aria-hidden />;
-  }
 
   return (
     <button
