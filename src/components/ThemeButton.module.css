@@ -1,0 +1,22 @@
+.icon-button {
+    position: fixed;
+    bottom: 0.5em;
+    right: 0.5em;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--container-text);
+    margin-right: 1em;
+}
+
+.icon-button:hover {
+    color: var(--gradient-top);
+}
+
+@media (max-width: 900px) {
+    .icon-button {
+        position: absolute;
+        bottom: unset;
+    }
+}

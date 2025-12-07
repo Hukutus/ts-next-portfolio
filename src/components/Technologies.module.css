@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    gap: 0.5em;
+    margin: 0.5em 0;
+    font-size: 0.8em;
+}
+
+.container p {
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
+    background-color: var(--gradient-top);
+    box-shadow: 0.2em 0.2em var(--foreground);
+}

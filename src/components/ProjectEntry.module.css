@@ -1,0 +1,35 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+
+  /*margin-bottom: 2em;*/
+  /*border: 1px solid var(--container-text);*/
+  /*border-radius: inherit;*/
+}
+
+.article img {
+  float: left;
+  object-fit: contain;
+
+  /*border: 0.1em solid var(--gradient-top);*/
+  border-radius: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em 0;
+  background: var(--gradient-bottom);
+}
+
+.article:nth-of-type(even) img {
+  float: right;
+  margin-right: unset;
+  margin-left: 0.5em;
+}
+
+.article a {
+  color: var(--gradient-top);
+  font-weight: 600;
+}
+
+.article p {
+  margin-bottom: 0.5em;
+}

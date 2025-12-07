@@ -1,0 +1,36 @@
+.homepage {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 0.5em;
+}
+
+@media (max-width: 900px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--container-bg);
+  color: var(--container-text);
+  border: 0.2em solid var(--gradient-bottom);
+
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.centered {
+  justify-content: center;
+  align-items: center;
+}
+
+.no-stretch {
+  height: unset;
+  align-self: baseline;
+}
